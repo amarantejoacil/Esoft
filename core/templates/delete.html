@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar Medico</title>
+</head>
+<body>
+
+<p>Tem certeza que deseja deletar {{endereco}} ?</p>
+
+<form action="{% url 'deletar-endereco' endereco.id %}" method="post">
+    {% csrf_token %}
+    <a href="{% url 'index' %}">Cancelar</a>
+    <input type="submit" name="Confirmar">
+</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Endereço</title>
+</head>
+<body>
+<h2>Lista de endereço</h2>
+
+<a href="{% url 'cadastrar-endereco' %}">Cadastrar Novo Endereco</a>
+
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>cep</th>
+        <th>endereco</th>
+        <th>uf</th>
+        <th>cidade</th>
+        <th>bairro</th>
+    </tr>
+    {% for e in obj_endereco %}
+    <tr>
+        <td>{{e.id}}</td>
+        <td>{{e.cep}}</td>
+        <td>{{e.endereco}}</td>
+        <td>{{e.uf}}</td>
+        <td>{{e.cidade}}</td>
+        <td>{{e.bairro}}</td>
+        <td>
+{#            <a href="{% url 'atualizar-endereco' e.pk %}">Alterar</a>#}
+            <a href="{% url 'deletar-endereco' e.pk %}">Excluir</a>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+</body>
+</html>
